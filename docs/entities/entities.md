@@ -9,15 +9,16 @@ Relationships:
 
 Fields:
 id
+slug
 name
 code
 created_at
 udpated_at
 
 
----------------------------
-      State               |
----------------------------
+----------------------------
+      States               |
+----------------------------
 Purpose:
 Represents a state within the Country
 
@@ -33,9 +34,9 @@ slug
 created_at
 updated_at
 
----------------------------
-       City               |
----------------------------
+-----------------------------
+       Cities               |
+-----------------------------
 Purpose:
 Represents a City within the state
 
@@ -59,9 +60,9 @@ description
 created_at
 updated_at
 
-------------------------------
-       Category               |
-------------------------------
+--------------------------------
+       Categories              |
+--------------------------------
 Purpose:
 Represents the type of Tourists destination
 
@@ -71,13 +72,14 @@ Relationships:
 Fields:
 id
 name
+slug
 icon
 created_at
 updated_at
 
----------------------------------
-       Destination               |
----------------------------------
+-----------------------------------
+       Destinations               |
+-----------------------------------
 Purpose:
 Represents Tourist attraction within a City
 
@@ -104,7 +106,7 @@ created_at
 updated_at
 
 --------------------------------------
-       Destination Image              |
+       Destination Images             |
 --------------------------------------
 Purpose:
 Stores Images of the Destinations
@@ -121,9 +123,9 @@ display_order
 created_at
 updated_at
 
----------------------------------
-       Experience                |
----------------------------------
+-----------------------------------
+       Experiences                |
+-----------------------------------
 Purpose:
 Represents activities travelers can enjoy
 
@@ -142,7 +144,7 @@ created_at
 updated_at
 
 ---------------------------------
-       Stay Area                |
+       Stay Areas                |
 ---------------------------------
 Purpose:
 Represents a recommended neighborhoods for accommodation
@@ -162,7 +164,7 @@ created_at
 updated_at
 
 ---------------------------------
-       Travel Route             |
+       Travel Routes             |
 ---------------------------------
 Purpose:
 Represents travel between two cities
@@ -204,9 +206,9 @@ miscellaneous_cost
 created_at
 updated_at
 
----------------------------
-       User                |
----------------------------
+-----------------------------
+       Users                |
+-----------------------------
 Purpose:
 Represents a registered traveler
 
@@ -224,7 +226,7 @@ created_at
 updated_at
 
 --------------------------------
-       Favorite                |
+       Favorites                |
 --------------------------------
 Purpose:
 Stores bookmarked destination
@@ -240,7 +242,7 @@ destination_id (foreign key)
 created_at
 
 ------------------------------
-       Review                |
+       Reviews                |
 ------------------------------
 Purpose:
 Stores Destination Reviews
@@ -287,9 +289,10 @@ Relationships:
 1 DestinationTag belongs to 1 Tag
 
 Fields:
-id
+created_at
 tag_id (foreign key)
 destination_id (foreign key)
+primary key -> (tag_id, destination_id)
 
 -------------------------------------
        Operating Hours               |
@@ -337,7 +340,8 @@ Maps facilities to Destinations
 Fields:
 destination_id (foreign key)
 facility_id (foreign key)
-
+created_at
+primary key -> (destination_id, facility_id)
 
 Future Table (not implemented yet)
 1. Video (Reels)

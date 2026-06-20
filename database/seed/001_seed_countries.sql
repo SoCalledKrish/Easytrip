@@ -1,0 +1,1 @@
+INSERT INTO countries(name, code, slug) VALUES('India','IN','india');
