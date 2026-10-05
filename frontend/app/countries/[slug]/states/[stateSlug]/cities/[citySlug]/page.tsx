@@ -169,8 +169,9 @@ export default async function CityPage({
         </Link>
 
         <div className="nav-links">
-          <Link href="/">Explore</Link>
-          <Link href="/#about">About</Link>
+        <Link href="/">Explore</Link>
+        <Link href="/travel">Plan</Link>
+        <Link href="/#about">About</Link>
         </div>
       </nav>
 
@@ -479,8 +480,9 @@ export default async function CityPage({
         </div>
 
         <p>
-            Get a rough idea of what a day in {city.name} could cost
-            across different travel styles.
+        Get a rough idea of what a day in {city.name} could cost
+        across different travel styles. These are approximate estimates,
+        not live prices.
         </p>
         </div>
 

@@ -112,10 +112,19 @@ export default async function DestinationPage({
 
         {/* Breadcrumb / location */}
         <div className="destination-detail-header">
-          <span className="section-label">
-            {countryName.toUpperCase()} · {stateName.toUpperCase()} ·{" "}
-            {cityName.toUpperCase()}
-          </span>
+          <div className="destination-breadcrumbs">
+            <Link href="/">Explore</Link>
+            <span>→</span>
+            <span>{countryName}</span>
+            <span>→</span>
+            <span>{stateName}</span>
+            <span>→</span>
+            <Link
+                href={`/countries/${slug}/states/${stateSlug}/cities/${citySlug}`}
+            >
+                {cityName}
+            </Link>
+            </div>
 
           <h1>{destination.name}</h1>
 
